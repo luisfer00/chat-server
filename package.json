@@ -1,0 +1,31 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build && node dist/index.js",
+    "start:babel": "babel-node src/index.ts --extensions .ts",
+    "type-check": "tsc --noEmit",
+    "build": "npm run type-check && babel src --out-dir dist --extensions .ts",
+    "dev": "npm run type-check && npm run start:babel",
+    "watch:dev": "nodemon -e ts,js,json --watch src --exec npm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luis Andrade (luisfer220900@gmail.com)",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "@babel/node": "^7.16.0",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-typescript": "^7.16.0",
+    "@types/node": "^16.11.8",
+    "socket.io": "^4.4.0",
+    "typescript": "^4.4.4",
+    "dotenv": "^10.0.0"
+  }
+}
